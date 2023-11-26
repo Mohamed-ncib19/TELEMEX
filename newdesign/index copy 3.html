@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bootstrap Navbar</title>
+  <meta http-equiv="Content-language" content="fr" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      height: 122px;
+      background-color: #2B2E86 !important;
+    }
+
+    .navbar-brand img {
+      width: 260px;
+      height: 38px;
+    }
+
+    .navbar-brand {
+      left: 151px !important;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 17px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 17px;
+      font-family: 'Poppins', sans-serif;
+      color: white !important;
+    }
+
+    .carousel {
+      width: 100%;
+      height: auto;
+
+    }
+
+    .carousel-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .carousel-indicators li {
+      background-color: transparent;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+    }
+
+    .carousel-indicators .active {
+      background-color: #fff;
+      border-color: #fff;
+    }
+
+    .e1_282input {
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .e1_282input::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      /* Ensure the icon doesn't interfere with input interaction */
+    }
+
+    /* Adjust the icon style based on your icon library or custom icon */
+    .search-icon i {
+      color: #999;
+      font-size: 16px;
+    }
+
+    .image-container {
+      text-align: center;
+      border-top-left-radius: 41px;
+      border-top-right-radius: 41px;
+      padding-top: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .content-container {
+      padding: 20px;
+      text-align: center;
+      border-bottom-left-radius: 41px;
+      border-bottom-right-radius: 41px;
+    }
+
+    .rounded-button {
+      border-radius: 50px;
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .custom-bg {
+      background-color: #2B2E86;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse"
+        style="z-index: 1;background-color: #2B2E86!important;padding: 15px;">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownExp" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Expédier
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownExp">
+              <a class="dropdown-item" href="#">Option 1</a>
+              <a class="dropdown-item" href="#">Option 2</a>
+              <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSuivi" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Suivi
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownSuivi">
+              <a class="dropdown-item" href="#">Option 1</a>
+              <a class="dropdown-item" href="#">Option 2</a>
+              <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownContacts" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Contacts
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownContacts">
+              <a class="dropdown-item" href="#">Option 1</a>
+              <a class="dropdown-item" href="#">Option 2</a>
+              <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEspaceClient" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Espace client <img src="images/ic_account_circle_24px.svg">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownEspaceClient">
+              <a class="dropdown-item" href="#">Option 1</a>
+              <a class="dropdown-item" href="#">Option 2</a>
+              <a class="dropdown-item" href="#">Option 3</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="images/jeune-adulte-voyageant-mobilite-durable.png" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/jeune-adulte-voyageant-mobilite-durable.png" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/jeune-adulte-voyageant-mobilite-durable.png" alt="Third slide">
+      </div>
+    </div>
+    <div class="e1_598">
+      <div class="e1_592">
+        <div class="e1_51">
+          <div class="e1_8"></div>
+          <div class="e1_9"></div>
+          <div class="e1_18">
+            <img src="images/expédier.svg">
+
+          </div>
+          <div class="e1_25">
+            <img src="images/suivi.svg">
+
+          </div><span class="e1_26">SUIVRE</span>
+          <div class="e1_28"></div><span class="e1_29">EXPÉDIER</span>
+        </div>
+      </div>
+      <span class="e1_286">Suivi de votre expédition</span>
+
+      <div class="e1_282">
+        <input type="text" class="e1_282input search-input" placeholder="Saisissez votre numéro de suivi">
+        <span class="search-icon">
+          <img src="images/Iconawesomsearch.svg">
+        </span>
+      </div>
+      <span class="e1_329">Plusieurs numéros de suivi Besoin d'aide ?</span>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+    margin: unset;">
+
+    <div class="col-md-6">
+
+      <div class="div-with-border" style="margin-bottom: 20px;">
+        <h3 style="font-size: 35px;">
+          Identifier des opportunités de croissance en tant que partenaire de service
+        </h3>
+        <div class="e1_328"></div>
+      </div>
+      <span>
+        Rejoignez nos équipes pour recevoir des mises à jour concernant les opportunités de nouvelles tournées, stimuler
+        vos revenus et développer votre entreprise.</span>
+      <div class="e1_52">
+        <button class="e1_30" style="color: red;margin-top: 20px ;">Devenir partenaire
+          <span>></span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-6" style="	background-image:url(images/group2.svg);  ">
+
+    </div>
+
+  </div>
+
+  <div class="row" style="margin: unset;">
+    <div class="col-md-6"
+      style="padding-bottom: 100px;padding-left: 100px;margin-top: 50px;background-color: rgba(43.00000123679638, 46.000001057982445, 134.00000721216202, 1);">
+      <span class="aboute1_360">À PROPOS</span>
+      <br>
+      <span class="aboute1_361">Telemex, est la solution
+        innovante de la livraison de dermier kilometre développée par la START-UP TELEFRET SAS. Telemex est spécialisée
+        dans la distribution de colis, de courriers et des repas. Elle est basée sur une solution informatique de prise
+        de
+        commande, de simulation de prix instantanés et d'un tracking en temps réel.
+
+        Nous proposons l’intégration d’une solution Addon API pour l’ensemble des sites de E-Commerce ou Market Place.
+        Nous proposons également un package complet de gestion de vos flux pour externaliser vos services d'entreposage,
+        gestion de stock et la livraison de vos produits.</span>
+      <br>
+
+      <button class="aboute1_362" style="color: white;margin-top: 100px;">Contactez-nous</button>
+    </div>
+    <img src="images/group3.png" style=" 
+      margin-top: 50px;   position: absolute;
+      right: 0px;
+      z-index: -9;">
+  </div>
+
+
+  <div class="row justify-content-center" style="font-family: Poppins;
+  color: white;text-align: center;margin: unset;">
+    <div class="col-md-12" style="text-align: center;margin-top: 100px;    margin-bottom: 100px;">
+      <span class="servicee1_364">Nos services de livraison</span>
+    </div>
+    <div class="col-md-3" style="padding: 20px; ">
+      <div class="image-container custom-bg">
+        <div class="servicee1_386">
+          <img src="images/Icon map-food.svg" alt="Image 1">
+        </div>
+      </div>
+      <div class="content-container custom-bg">
+        <span class="servicee1_392">Repas et Boissons</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button class="rounded-button">Expédier</button>
+      </div>
+    </div>
+    <div class="col-md-3" style="padding: 20px; ">
+      <div class="image-container custom-bg">
+        <div class="servicee1_386">
+          <img src="images/Icon map-food.svg" alt="Image 1">
+        </div>
+      </div>
+      <div class="content-container custom-bg">
+        <span class="servicee1_392">Colis et Courrier</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button class="rounded-button">Expédier</button>
+      </div>
+    </div>
+    <div class="col-md-3" style="padding: 20px; ">
+      <div class="image-container custom-bg">
+        <div class="servicee1_386">
+          <img src="images/Icon map-food.svg" alt="Image 1">
+        </div>
+      </div>
+      <div class="content-container custom-bg">
+        <span class="servicee1_392">Déménagement</span>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button class="rounded-button">Expédier</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="row justify-content-center" style="font-family: Poppins;
+  color: white;text-align: center;margin: unset;">
+    <div class="worke1_408"><span class="worke1_410">Comment ça marche ?</span></div>
+
+    <div class="parent-container">
+      <div class="child">
+        <div class="square-container">
+          <img src="images/Icon feather-shopping-cart.svg" alt="Icon" class="icon">
+        </div>
+        <div class="text-container">
+          <h3 class="title">1 ÉTAPE</h3>
+          <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed </p>
+        </div>
+      </div>
+      <div class="child">
+        <div class="square-container">
+          <img src="images/Icon awesome-truck-moving.svg" alt="Icon" class="icon">
+        </div>
+        <div class="text-container">
+          <h3 class="title">2 ÉTAPE</h3>
+          <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed </p>
+        </div>
+      </div>
+      <div class="child">
+        <div class="square-container">
+          <img src="images/Icon material-payment.svg" alt="Icon" class="icon">
+        </div>
+        <div class="text-container">
+          <h3 class="title">3 ÉTAPE</h3>
+          <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
+        </div>
+      </div>
+      <div class="child">
+        <div class="square-container">
+          <img src="images/Icon feather-package (1).svg" alt="Icon" class="icon">
+        </div>
+        <div class="text-container">
+          <h3 class="title">4 ÉTAPE</h3>
+          <p class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="row justify-content-center" style="font-family: Poppins;
+color: white;text-align: center;margin: unset;">
+    <div class="col-md-12" style="text-align: center;margin-top: 100px;    margin-bottom: 100px;">
+      <span class="servicee1_364">Pourquoi nous choisir ?</span>
+    </div>
+    <div class="col-md-3" style="padding: 20px;height: 400px; ">
+      <div class="image-container custom-bg">
+        <div class="servicee1_386">
+          <img src="images/Icon map-food.svg" alt="Image 1">
+        </div>
+      </div>
+      <div class="content-container custom-bg">
+        <h3>SÉCURITÉ</h3>
+        <p>Ne confiez plus vos Colis aux
+          inconnus. Chez TELEMEX, tous les
+          coursiers sont identifiés et
+          professionnels. Vous avez la
+          possibilité de faire le suivi en
+          temps réel</p>
+      </div>
+    </div>
+    <div class="col-md-3" style="padding: 20px;height: 400px; ">
+      <div class="image-container custom-bg">
+        <div class="servicee1_386">
+          <img src="images/Icon map-food.svg" alt="Image 1">
+        </div>
+      </div>
+      <div class="content-container custom-bg">
+        <h3>DEMATERIALISATION</h3>
+        <p>Depuis votre bureau ou la maison, faites-vous livrer grâce à la solutionTELEMEX en un clic ceci sur un
+          support au choix (ordinateur, smartphone ou tablette).</p>
+      </div>
+    </div>
+    <div class="col-md-3" style="padding: 20px;height: 400px; ">
+      <div class="image-container custom-bg">
+        <div class="servicee1_386">
+          <img src="images/Icon map-food.svg" alt="Image 1">
+        </div>
+      </div>
+      <div class="content-container custom-bg">
+        <h3>BOOSTEZ VOTRE
+          PERFORMANCE</h3>
+
+        <p>Concentrez-vous sur votre activité et confiez la livraison de vos colis à TELEMEX</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center" style="font-family: Poppins;
+color: white;text-align: center;margin: unset;">
+    <div class="worke1_408" style="height: 400px;"><span class="worke1_410">Témoignage des clients</span></div>
+    <div class="footere1_456" style="
+margin-top: -100px;">
+      <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+        <div class="footere1_457"></div>
+      </div>
+
+      <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+
+        <div class="row">
+          <div class="footere1_459"></div>
+          <div class="footere1_459"></div>
+          <div class="footere1_459"></div>
+          <div class="footere1_459"></div>
+          <div class="footere1_459"></div>
+
+        </div>
+      </div>
+
+      <div class="col-md-12" style="display: flex;justify-content: center;align-items: center;">
+        <span class="footere1_468">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+          euismod
+          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+          tation
+          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row" style="margin: unset;">
+    <div class="col-md-6">
+      <div class="footere1_471">Expédiez vos colis
+        via notre app
+        mobile</div>
+    </div>
+    <div class="col-md-6"> <img style="margin-top: 100px;width: 100%;" src="images/group8.svg" />
+    </div>
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+.nav-tlmx{
+    background-color: #2B2E86!important;
+    height: 122px;
+}
+
+.v1_239 {
+    width: 260px;
+    height: 38px;
+    background: url(images/v1_239.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 42px;
+    left: 140px;
+    border: 1px solid rgba(112,112,112,1);
+    overflow: hidden;
+}

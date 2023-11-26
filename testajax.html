@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+  <meta http-equiv="Content-language" content="fr" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta charset="UTF-8">
+<head>
+	<title>Table with Evaluation Modal</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- Custom CSS -->
+	
+</head>
+<body>
+<style>
+    /* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rating-stars {
+  display: flex;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.star:hover:before,
+.star:hover ~ .star:before,
+.star.selected:before {
+  content: "\2605";
+  position: absolute;
+  color: gold;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #313389;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.rate-btn {
+  background-color: #313389;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+</style>
+<div style="width: 1920px; height: 1730px; position: relative; background: white">
+  <div style="left: 554px; top: 212px; position: absolute; color: #2B2E86; font-size: 54px; font-family: Poppins; font-weight: 600; text-transform: uppercase; word-wrap: break-word">Politique de confidentialité</div>
+  <div style="width: 99px; height: 5px; left: 554px; top: 280px; position: absolute; background: #E92C24; border: 0.50px solid"></div>
+  <div style="width: 812px; height: 1054px; left: 554px; top: 380px; position: absolute"><span style="color: #E92C24; font-size: 34px; font-family: Poppins; font-weight: 600; word-wrap: break-word">PROPRIÉTÉ INTELLECTUELLE<br/><br/></span><span style="color: #313131; font-size: 21px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Le contenu, la mise en page, le graphisme, les bases de données, la conception et tous les éléments constituant le site web Telemex.cm sont la propriété exclusive de la société : TELEFRET SAS. TELEFRET, Société par Actions Simplifiée est immatriculée au CAMEROUN, au Capital de 1.000.000 XAF ayant son siège à BONAMOUSSADI BP : 5489 Douala-Cameroun, Tel : +237 690465196, Mail : commercial@telemex.cm inscrite au Registre de Commerce de Douala sous le Numéro RC/DLN/2022/B/1691, Numéro Identifiant Unique (NIU) : M082217617729X.<br/>Toute reproduction partielle ou totale du contenu du site www.telemex.cm par quelque procédé que ce soit, sous quelque forme que ce soit, sans l’autorisation expresse, écrite et préalable de leur propriétaire, est strictement interdite. Tout contrevenant s’expose à des poursuites judiciaires.<br/><br/></span><span style="color: #E92C24; font-size: 34px; font-family: Poppins; font-weight: 600; word-wrap: break-word">RESPECT DE LA VIE PRIVÉE<br/></span><span style="color: #313131; font-size: 21px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Toutes les données à caractère personnelle, collectées sur le site www.telemex.cm sont fournies par l’utilisateur lui-même, à travers les formulaires du site. Elles sont conservées dans les bases de données du site, et ne sont utilisées à aucune fin commerciale ou prospective.<br/>Ces données à caractères personnel ne font l’objet d’aucun traitement autre que celui nécessaire au bon fonctionnement du site, et dont le contenu est défini dans les Conditions Générale d’Utilisation et préalablement accepté par l’utilisateur. L’utilisateur, a néanmoins accès à ces données à travers son profil sécurisé. Il a le droit de les modifier et les maintenir à jour. L’utilisateur a également le droit de supprimer ses propres données à caractères personnel. Il est invité pour cela à adresser une demande au responsable du traitement du site.<br/>Les demandes de suppression peuvent être formulées par mail à l’adresse<br/>suivante : commercial@telemex.cm.<br/>HÉBERGEMENT DU SITE Le site www.telemex.cm ainsi que les bases de données sont hébergés sur les serveurs de Camoo Hosting à Yaoundé, Cameroun.</span></div>
+  <div style="width: 1925px; height: 1909px; left: 140px; top: 11px; position: absolute">
+    <div style="width: 145px; height: 1920px; left: 5px; top: 1909px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; background: #2B2E86; box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.21); border: 0.50px solid"></div>
+    <img style="width: 260px; height: 38px; left: 0px; top: 42px; position: absolute; border: 0.50px solid" src="https://via.placeholder.com/260x38" />
+    <div style="left: 1553px; top: 53px; position: absolute; color: #E92C24; font-size: 13px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Déconnexion</div>
+    <div style="left: 303px; top: 47.01px; position: absolute; color: white; font-size: 21px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Envoyer un colis</div>
+    <div style="left: 515px; top: 45.51px; position: absolute; color: white; font-size: 21px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Nous rejoindre</div>
+    <div style="left: 711px; top: 48px; position: absolute; color: #E92C24; font-size: 21px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Suivi</div>
+    <div style="left: 803px; top: 48px; position: absolute; color: white; font-size: 21px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Historique</div>
+    <div style="left: 1352.12px; top: 53px; position: absolute; color: white; font-size: 13px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Nom d'utilisateur</div>
+    <div style="width: 38.38px; height: 38.38px; left: 1479.62px; top: 42.31px; position: absolute; background: white; border: 0.50px solid"></div>
+    <div style="width: 15px; height: 0px; left: 1535.50px; top: 54px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 0.50px white solid"></div>
+    <div style="width: 14.79px; height: 11.83px; left: 1245.21px; top: 6px; position: absolute; background: #E92C24; border: 0.50px solid"></div>
+    <div style="left: 1265px; top: 0px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 300; word-wrap: break-word">commercial@telemex.cm</div>
+    <div style="left: 1507px; top: 0px; position: absolute; color: white; font-size: 16px; font-family: Poppins; font-weight: 300; word-wrap: break-word">+237 655 767 535</div>
+    <div style="width: 15px; height: 0px; left: 1477px; top: 4.50px; position: absolute; transform: rotate(90deg); transform-origin: 0 0; border: 0.50px white solid"></div>
+    <img style="width: 20px; height: 20px; left: 1482px; top: 0px; position: absolute; border: 0.50px solid" src="https://via.placeholder.com/20x20" />
+    <img style="width: 60px; height: 62px; left: 1587px; top: 989px; position: absolute; border: 0.50px solid" src="https://via.placeholder.com/60x62" />
+  </div>
+  <div style="width: 1920px; height: 1893.05px; left: 201.89px; top: 1559.06px; position: absolute">
+    <div style="width: 201.89px; height: 1920px; left: 0px; top: 1893.05px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; background: #E92C24; border: 0.50px solid"></div>
+    <div style="left: 675.11px; top: 145.90px; position: absolute; color: white; font-size: 13px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Copyright © 2023 TELEMEX</div>
+    <div style="width: 645.70px; height: 34.02px; left: 435.11px; top: 0px; position: absolute">
+      <div style="width: 28.22px; height: 28.22px; left: 111.69px; top: 5.44px; position: absolute">
+        <div style="width: 28.22px; height: 28.22px; left: 0px; top: 0px; position: absolute; background: white; border: 0.50px solid"></div>
+        <div style="width: 13.32px; height: 13.32px; left: 7.45px; top: 7.46px; position: absolute; background: white; border: 0.50px solid"></div>
+        <div style="width: 5.25px; height: 5.25px; left: 11.48px; top: 11.49px; position: absolute; background: white; border: 0.50px solid"></div>
+      </div>
+      <div style="left: 146.92px; top: 4.02px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Instagram</div>
+      <div style="left: 35.23px; top: 4.02px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Twitter</div>
+      <div style="left: 306.54px; top: 2.72px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Facebook</div>
+      <div style="left: 459.68px; top: 0px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Linkedin</div>
+      <div style="left: 549.55px; top: 0px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Skype</div>
+      <div style="width: 28.62px; height: 28.62px; left: 270.92px; top: 3.65px; position: absolute; background: white; border: 0.50px solid"></div>
+      <div style="width: 28.22px; height: 28.22px; left: 424.45px; top: 2.74px; position: absolute; background: white; border: 0.50px solid"></div>
+      <div style="width: 28.22px; height: 28.22px; left: 617.48px; top: 2.74px; position: absolute; background: white; border: 0.50px solid"></div>
+      <div style="width: 28.22px; height: 28.22px; left: 0px; top: 5.44px; position: absolute; background: white; border: 0.50px solid"></div>
+    </div>
+    <div style="width: 413px; height: 32px; left: 552.11px; top: 59.94px; position: absolute">
+      <div style="left: 0px; top: 0px; position: absolute; color: white; font-size: 21px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Conditions d'utilisation</div>
+      <div style="left: 258px; top: 0px; position: absolute; color: #F0F0F0; font-size: 21px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Mention légale</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+  

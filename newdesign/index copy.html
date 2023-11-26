@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Bootstrap Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    .image-container {
+      text-align: center;
+      border-top-left-radius: 41px;
+      border-top-right-radius: 41px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .servicee1_386 {
+      border-radius: 500px;
+      background-color: rgba(255, 255, 255, 1);
+      width: 104px;
+      height: 104px;
+      margin: 0 auto;
+    }
+
+    .content-container {
+      padding: 20px;
+      text-align: center;
+      border-bottom-left-radius: 41px;
+      border-bottom-right-radius: 41px;
+    }
+
+    .rounded-button {
+      border-radius: 50px;
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .custom-bg {
+      background-color: #2B2E86;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+        <div class="image-container custom-bg">
+          <div class="servicee1_386 d-flex align-items-center justify-content-center">
+            <img src="images/Icon map-food.svg" alt="Image 1">
+          </div>
+        </div>
+        <div class="content-container custom-bg">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button class="rounded-button">Button 1</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="image-container custom-bg">
+          <div class="servicee1_386 d-flex align-items-center justify-content-center">
+            <img src="images/Icon map-food.svg" alt="Image 2">
+          </div>
+        </div>
+        <div class="content-container custom-bg">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button class="rounded-button">Button 2</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="image-container custom-bg">
+          <div class="servicee1_386 d-flex align-items-center justify-content-center">
+            <img src="images/Icon map-food.svg" alt="Image 3">
+          </div>
+        </div>
+        <div class="content-container custom-bg">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button class="rounded-button">Button 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
