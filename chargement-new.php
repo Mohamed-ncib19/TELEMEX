@@ -1,68 +1,47 @@
-<?php include "header-new.php" ?>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+<?php  include "header-new.php"; ?>
 <?php if((isset($_SESSION['login_user'])) ) {               ?>
 
-<div class="row" style="margin: unset;text-align: center;">
-    <div class="col-md-12" style="display: inherit;
-    text-align: center;
-    justify-content: center;
-    height: 295px;
-    background-image: url('newdesign/images/pexels-kindel-media-6868618.png');
-    ">
-        <div class="row col-md-9" style="margin-top: 150px;">
-            <span class="servicee1_364" style="color: white!important;">ENVOYER UN COLIS
-                <div class="e1_328" style="position: unset!important;"></div>
-            </span>
-            <span class="" style="color: white;margin-top: 20px;font-size: 21px!important;position: absolute;
-    bottom: 10px;">Veuillez remplir le formulaire suivant</span>
+<div class="h-screen ">
 
+
+<div class=" bg-[url('./newdesign/images/envoyer-un-colis.jpg')] bg-no-repeat bg-fixed  md:h-[50vh] h-[30vh] w-full md:bg-cover  mt-20" >
+
+    <div class="bg-black w-full h-full bg-opacity-50 inset-0 flex flex-col justify-center items-start" >
+        <div class="  md:mx-5 mx-2 flex  flex-col md:gap-7 gap-3  w-full" >
+            <h1 class="md:text-[3rem] text-[2rem] text-white tracking-wide font-semibold" >ENVOYER UN <span class="text-[#E92C24]" >COLIS</span></h1>
+            <p class="md:text-[1.5rem] text-[1rem] text-white md:mx-6 mx-2 tracking-wider" >Veuillez remplir le formulaire suivant</p>
         </div>
     </div>
+   
 </div>
-<form id="myForm" action="post-charg.php" method="POST" enctype="multipart/form-data">
 
-    <div class="row" style="margin: unset;text-align: center;">
-        <div class="col-md-12" style="display: inherit;
-    text-align: center;
-    justify-content: center;
-    ">
-            <div class="row col-md-9" style="margin-top: 10px;">
-                <span class="servicee1_3641">Caractéristiques
-                </span>
+<form id="myForm" class="md:w-[80%] w-[90%] m-auto bg-[#D9D9D9]/[.4]" action="post-charg.php" method="POST" enctype="multipart/form-data">
+
+      
+            <div class="text-[#E92C24] text-[1.5rem]" >
+                <p>Caractéristiques</p>
             </div>
 
-        </div>
-        <div class="col-md-12" style="display: inherit;
-    text-align: center;
-    justify-content: center;
-    ">
-            <div class="row col-md-9" style="margin-top: 10px;">
-                <div class="col-md-6 split6" style="margin-top: 10px;">
-                    <div class="col-md-12">
-                        <div class="v1_146">
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Type de véhicule<span style="color: red;">*</span>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <select class="v1_106 classicInput" name="type_vehicule" size="1"
-                                            style="width: 100%;padding-left: 20px;" id="vehicule"
-                                            onChange="changecat(this.value);">
-                                            <option value="Moto" selected>Moto</option>
-                                            <option value="Tricycle">Tricycle</option>
-                                            <option value="Van">Van</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Type de colis<span style="color: red;">*</span>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <select class="v1_106 classicInput" name="marchandise" id="marchandise"
-                                            required="" style="width: 100%;padding-left: 20px;">
+      
+
+
+        <div >
+            <div >
+                <div >
+                    <div >
+                        <div >
+
+
+                                        <select name="marchandise" id="marchandise"
+                                            required >
+                                            <option value="" selected disabled> Type de colis*</option>
                                             <option value="repas">repas</option>
                                             <option value="plis">plis</option>
                                             <option value="Médicaments">Médicaments</option>
@@ -72,38 +51,111 @@
                                             <option value="petit colis">petit colis</option>
                                             <option value="Autres">Autres</option>
                                         </select>
-                                        <div id="othervalue" class="row"
-                                            style="display: none;width: 100%;margin: unset!important;">
-                                            <input type="text" name="marchandise1" class="v1_106 classicInput"
-                                                placeholder="Préciser"
-                                                style="padding-left: 20px;width: 100%; margin-top:10px;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Recommandations
-                                    </div>
-                                    <div class="col-md-8">
-                                        <textarea class="v1_106 classicInput"
+
+
+                                        <textarea 
                                             placeholder="Plus de details sur votre marchandise" name="details_march"
-                                             style="padding-left: 20px;width:  100%!important;height: 140px;"
+                                             
                                             ></textarea>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row classicInput1">
-                                <div class="row hidden">
-                                    <div class="col-sm-4 col-xs-12 no-padding left-title">Pays
-                                        de Chargement </div>
-                                    <div class="col-sm-6 col-xs-12 no-padding">
 
-                                        <select type="text" name="pays_charg" id="pays4" onchange="initialize()"
+                                        
+                            
+                                <div >
+
+                                    <p >
+                                        Image du colis :
+                                    </p>
+
+                                    <input id="file" type="file" class="hidden" name="img_march"
+                                    onchange="previewFile()" >
+                                        <div >
+                                            <label for="file"  >
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                    viewBox="0 0 22 22" fill="none" class=" absolute m-2" >
+                                                    <path
+                                                        d="M11.1393 0C5.14403 0 0.27832 4.86571 0.27832 10.861C0.27832 16.8562 5.14403 21.7219 11.1393 21.7219C17.1345 21.7219 22.0002 16.8562 22.0002 10.861C22.0002 4.86571 17.1345 0 11.1393 0ZM16.5698 11.9471H12.2254V16.2914H10.0532V11.9471H5.7088V9.77487H10.0532V5.43048H12.2254V9.77487H16.5698V11.9471Z"
+                                                        fill="#E92C24" />
+                                                </svg>
+
+                                                    <img id="blah" class="relative w-[40%] h-[40%]" src="newdesign/images/pile.png" />
+                                               
+                                            </label>
+                                        </div>
+
+                                </div>
+                           <script>
+                            function previewFile(){
+                            const inputImage =  document.querySelector('#file').files[0];
+                            const imageLabel = document.querySelector('#blah');
+                            const reader = new FileReader();
+                           
+                            reader.addEventListener(
+                                "load",
+                                ()=>{
+                                   // Adjust to your desired height
+                                    imageLabel.style.objectFit = 'contain';
+                                    imageLabel.src =reader.result;
+                                   
+                                },
+                                false,
+
+                            );
+                            if(inputImage){
+                                reader.readAsDataURL(inputImage);
+                            }
+                        }
+                           </script>
+
+
+                                   
+                                        <select  name="type_vehicule"
+                                            id="vehicule"class="w-full"required
+                                            onChange="changecat(this.value);">
+                                            <option value="" selected disabled>Type de véhicule*</option>
+                                            <option value="Moto">Moto</option>
+                                            <option value="Tricycle">Tricycle</option>
+                                            <option value="Van">Van</option>
+                                        </select>
+                                    
+                                
+                                    <br><br><br><br><br><br><br><br><br><br>
+
+
+                                    
+                                      
+                                        <!-- Modal toggle -->
+<button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex justify-between items-center gap-4 text-white bg-[#E92C24] focus:ring-4 focus:outline-none  rounded-lg p-2" type="button">
+<p>Adresse d'enlèvement</p>
+<iconify-icon icon="icomoon-free:location" class="text-[1.5rem]" style="color: white;"></iconify-icon>
+</button>
+
+<!-- Main modal -->
+<div id="crud-modal" tabindex="-1" aria-hidden="true" class=" animate__animated animate__fadeInUp hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-max">
+    <div class="relative p-4 md:w-[50%] w-[90%] h-[50%]">
+        <!-- Modal content -->
+        <div class="relative bg-red-300 rounded-lg shadow ">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Adresse d'enlèvement
+                </h3>
+                <button type="button" class=" bg-transparent text-white  rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center  dark:hover:text-white" data-modal-toggle="crud-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class=" w-[80%] flex flex-col justify-center m-auto gap-4 p-2" >
+
+            <div class="flex justify-between" >
+            <select type="text" name="pays_charg" id="pays4" onchange="initialize()"
                                             placeholder="Pays *">
-                                            <option selected value="Cameroun"
+                                            <option value="" selected disabled>Pays de Chargement</option>
+                                            <option  value="Cameroun"
                                                 style="background:url('./img/flags/cameroon.svg') no-repeat; width:30px; height:30px;">
                                                 Cameroun</option>
                                             <option value="Senegal"
@@ -131,146 +183,157 @@
                                                 style="background:url('./img/flags/equatorial-guinea.svg') no-repeat; width:30px; height:30px;">
                                                 Guinée équatoriale</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Adresse d'enlèvement <span style="color: red;">*</span>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input type="text" name="ville_charg" id="ville4" class="hidden"
-                                            placeholder="Adresse d'enlèvement" />
-                                        <div id="depdiv" class="row" style="width: 100%;margin: unset!important;">
-                                            <input type="text" class="location-input v1_106 classicInput"
-                                                placeholder="Location" name="autocomplete" id="autocomplete"
-                                                style="padding-left: 20px;">
-                                            <img id="mapmylocation" class="location-icon"
-                                                src="newdesign/images/ic_person_pin_circle_24px.svg" alt="My Location"
-                                                onclick="setMyLocation('autocomplete','latitude','longitude','ville4')">
-                                        </div>
 
-                                        <div class="card-body hidden">
-                                            <div class="form-group " id="lat_area">
+
+
+
+                                        <input type="text" name="ville_charg" id="ville4" 
+                                            placeholder="Ville" />
+                                            </div>
+
+
+                                            <div>
+                                        <div class="hidden" >
+                                            <div  id="lat_area">
                                                 <label for="latitude"> Latitude </label>
-                                                <input type="text" name="latitude" id="latitude" class="form-control">
+                                                <input type="text" name="latitude" id="latitude">
                                             </div>
 
-                                            <div class="form-group" id="long_area">
+                                            <div  id="long_area">
                                                 <label for="latitude"> Longitude </label>
-                                                <input type="text" name="longitude" id="longitude" class="form-control">
+                                                <input type="text" name="longitude" id="longitude">
                                             </div>
                                         </div>
-                                        <div class="row hidden">
-                                            <div class="col-sm-4 col-xs-12 no-padding left-title">
+                                        <div class="hidden" >
+                                            <div >
                                                 Distance(Km) :</div>
-                                            <div class="col-sm-8 col-xs-12 no-padding">
+                                            <div >
 
                                                 <input type="number" name="distance" id="distance" value="0" disabled>
                                             </div>
 
                                         </div>
+                                        </div>
+                                        
+                                        <input type="text" id="adresse_charg" placeholder="adresse charge*" >
+                                    </div>
 
+                                    <div class="border-b border-black pt-4 m-auto w-[20%]" ></div>
+
+                                    <br><br><br><br>
+
+                                           
+
+
+
+
+
+                                   
+
+
+
+
+
+                              
+
+
+
+
+                             
+                               
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div> 
+
+
+       <br><br><br><br><br><br><br><br><br><br><br><br>                     
+                                   
+                                    
+                                    <div >
+                                    <div >
+                                        Heure de ramassage<span >*</span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Heure de ramassage<span style="color: red;">*</span>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input class="v1_106 classicInput" type="time" name="date_charg" required
+                                    <div >
+                                        <input type="time" name="date_charg" required
                                             onclick="getDistanceAndPrice()"
-                                            style="padding-left: 20px;width:  100%!important;">
+                                            s>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Expéditeur: Moi même <span style="color: red;">*</span>
+                                </div>   
+
+
+       <div >
+                                    <div >
+                                        Expéditeur: Moi même <span >*</span>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" class="onoffswitch-checkbox" name="contactPersonX1"
+                                    <div >
+                                        <div >
+                                            <input type="checkbox"  name="contactPersonX1"
                                                 id="contactPersonX1" onclick="contactPerson1()">
-                                            <label class="onoffswitch-label" for="contactPersonX1">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
+                                            <label  for="contactPersonX1">
+                                                <span ></span>
+                                                <span ></span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Nom expéditeur <span style="color: red;">*</span>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input class="v1_106 classicInput" id="name_expediteur" name="name_expediteur"
-                                            required type="text" style="padding-left: 20px;width:  100%!important;"
-                                            required="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Téléphone expéditeur<span style="color: red;">*</span>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <input class="v1_106 classicInput" name="telephone_expediteur" type="number"
-                                            id="telephone_expediteur" style="padding-left: 20px;width:  100%!important;"
-                                            required="">
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div id="alertDiv" style="display: none;"></div>
 
-                    </div>
-                </div>
-                <div class="col-md-6 split6" style="margin-top: 10px;">
-                    <div class="col-md-12">
-                        <div class="v1_146">
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Image du colis
+                            <div >
+                                <div >
+                                    <div >
+                                        Nom expéditeur <span >*</span>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="add-img col-sm-7 col-xs-12 no-padding previmg">
-                                            <input id="file" type="file" class="input-file" name="img_march"
-                                                onchange="readURL(this);">
-                                            <label for="file" class="label-file" style="
-    position: absolute;
-    left: 30px;
-    top: 20px;
-">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                    viewBox="0 0 22 22" fill="none">
-                                                    <path
-                                                        d="M11.1393 0C5.14403 0 0.27832 4.86571 0.27832 10.861C0.27832 16.8562 5.14403 21.7219 11.1393 21.7219C17.1345 21.7219 22.0002 16.8562 22.0002 10.861C22.0002 4.86571 17.1345 0 11.1393 0ZM16.5698 11.9471H12.2254V16.2914H10.0532V11.9471H5.7088V9.77487H10.0532V5.43048H12.2254V9.77487H16.5698V11.9471Z"
-                                                        fill="#E92C24" />
-                                                </svg></label>
-                                            <div class="imgs-prev">
-                                                <img id="blah" src="newdesign/images/pile.png" />
-                                            </div>
-                                        </div>
+                                    <div >
+                                        <input c id="name_expediteur" name="name_expediteur"
+                                            required type="text"
+                                            required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row classicInput1">
-                                <div class="row hidden">
-                                    <div class="col-sm-4 col-xs-12 no-padding left-title">Pays
-                                        de Livraison </div>
-                                    <div class="col-sm-6 col-xs-12 no-padding">
+                            <div >
+                                <div >
+                                    <div >
+                                        Téléphone expéditeur<span>*</span>
+                                    </div>
+                                    <div >
+                                        <input  name="telephone_expediteur" type="number"
+                                            id="telephone_expediteur" 
+                                            required>
+                                    </div>
+                                </div>
+                            </div>
+                           
+
+
+
+
+
+                     
+
+                        
+
+                <div >
+                    <div >
+                        <div >
+                            
+                            <div >
+                                <div>
+                                    
+                                    <div >
 
                                         <select type="text" name="pays_liv" id="pays5" onchange="initialize1()"
                                             placeholder="Pays *">
-                                            <option selected value="Cameroun"
+                                            <option value="" selected disabled>Pays
+                                        de Livraison</option>
+                                            <option value="Cameroun"
                                                 style="background:url('./img/flags/cameroon.svg') no-repeat; width:30px; height:30px;">
                                                 Cameroun</option>
                                             <option value="Senegal"
@@ -301,94 +364,94 @@
 
                                     </div>
                                 </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Adresse de Livraison <span style="color: red;">*</span>
+                                <div >
+                                    <div >
+                                        Adresse de Livraison <span >*</span>
                                     </div>
-                                    <div class="col-md-8">
-                                        <input type="text" name="ville_liv" id="ville5" class="hidden"
+                                    <div >
+                                        <input type="text" name="ville_liv" id="ville5" 
                                             placeholder="Adresse d'enlèvement" />
-                                        <div id="arrdiv" class="row" style="width: 100%;margin: unset!important;">
-                                            <input type="text" class="location-input v1_106 classicInput"
+                                        <div id="arrdiv"     >
+                                            <input type="text"  
                                                 placeholder="Location" name="autocomplete" id="autocomplete1"
-                                                style="padding-left: 20px;">
-                                            <img id="mapmylocation1" class="location-icon"
+                                                 >
+                                            <img id="mapmylocation1"  
                                                 src="newdesign/images/ic_person_pin_circle_24px.svg" alt="My Location"
                                                 onclick="setMyLocation('autocomplete1','latitude1','longitude1','ville5')">
                                         </div>
 
 
-                                        <div class="card-body hidden">
+                                        <div >
 
 
-                                            <div class="form-group " id="lat_area">
+                                            <div  id="lat_area">
                                                 <label for="latitude"> Latitude </label>
-                                                <input type="text" name="latitude1" id="latitude1" class="form-control">
+                                                <input type="text" name="latitude1" id="latitude1">
                                             </div>
 
-                                            <div class="form-group" id="long_area">
+                                            <div  id="long_area">
                                                 <label for="latitude"> Longitude </label>
                                                 <input type="text" name="longitude1" id="longitude1"
-                                                    class="form-control">
+                                                    >
                                             </div>
                                         </div>
-                                        <div class="row hidden">
-                                            <div class="col-sm-4 col-xs-12 no-padding left-title">Temps estimé pour
+                                        <div >
+                                            <div >Temps estimé pour
                                                 l’enlèvement</div>
-                                            <div class="col-sm-8 col-xs-12 no-padding">
+                                            <div >
                                                 <input type="time" name="date_liv" id="date_liv">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Destinataire: Moi même<span style="color: red;"></span>
+                            <div >
+                                <div >
+                                    <div >
+                                        Destinataire: Moi même<span></span>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="onoffswitch">
-                                            <input type="checkbox" class="onoffswitch-checkbox" name="contactPersonX1"
+                                    <div >
+                                        <div >
+                                            <input type="checkbox"  name="contactPersonX1"
                                                 name="contactPersonX" id="contactPersonX" onclick="contactPerson()">
-                                            <label class="onoffswitch-label" for="contactPersonX">
-                                                <span class="onoffswitch-inner"></span>
-                                                <span class="onoffswitch-switch"></span>
+                                            <label  for="contactPersonX">
+                                                <span ></span>
+                                                <span ></span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Nom du destinataire<span style="color: red;">*</span>
+                            <div >
+                                <div >
+                                    <div >
+                                        Nom du destinataire<span >*</span>
                                     </div>
-                                    <div class="col-md-8">
-                                        <input class="v1_106 classicInput" name="contact_name" id="contact_name"
+                                    <div >
+                                        <input name="contact_name" id="contact_name"
                                             type="text" placeholder="Nom"
-                                            style="padding-left: 20px;width:  100%!important;" required="">
+                                             required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Téléphone du destinataire<span style="color: red;">*</span>
+                            <div >
+                                <div >
+                                    <div >
+                                        Téléphone du destinataire<span >*</span>
                                     </div>
-                                    <div class="col-md-8">
-                                        <input class="v1_106 classicInput" name="contact_phone" id="contact_phone"
-                                        type="number" style="padding-left: 20px;width:  100%!important;" required="">
+                                    <div >
+                                        <input name="contact_phone" id="contact_phone"
+                                        type="number" required="">
                                     </div>
                                 </div>
                             </div>
-                            <div class="row classicInput1">
-                                <div class="row col-md-12">
-                                    <div class="col-md-4">
-                                        Montant Estimer(XAF) : <span style="color: red;">*</span>
+                            <div >
+                                <div >
+                                    <div >
+                                        Montant Estimer(XAF) : <span >*</span>
                                     </div>
-                                    <div class="col-md-8">
-                                        <input class="v1_106 classicInput" type="number" name="priceestimated"
+                                    <div >
+                                        <input type="number" name="priceestimated"
                                             id="priceestimated"
                                             style="  pointer-events: <?php echo $_SESSION['type']!="admin"?'none':''; ?>;padding-left: 20px;width:  100%!important;" required="">
                                     </div>
@@ -397,7 +460,7 @@
 
 
                         </div>
-                        <div id="alertDiv" style="display: none;"></div>
+                        <div id="alertDiv"></div>
 
                     </div>
                 </div>
@@ -410,54 +473,48 @@
 
 
 
-        <div class="row col-md-12" id="FACULTATIF" style="display:none;">
+        <div  id="FACULTATIF">
 
-            <div class="col-md-12" style="display: inherit;
-    text-align: center;
-    justify-content: center;
-    ">
-                <div class="row col-md-9" style="margin-top: 10px;">
-                    <span class="servicee1_3641">Facultatif
+            <div  >
+                <div >
+                    <span>Facultatif
                     </span>
                 </div>
 
             </div>
-            <div class="col-md-12" style="display: inherit;
-    text-align: center;
-    justify-content: center;
-    ">
-                <div class="row col-md-9" style="margin-top: 10px;">
-                    <div class="col-md-12" style="margin-top: 10px;">
-                        <div class="col-md-12">
-                            <div class="v1_146">
+            <div >
+                <div>
+                    <div  >
+                        <div >
+                            <div >
 
 
-                                <div class="row classicInput1">
-                                    <div class="row col-md-12">
-                                        <div class="col-md-3">
+                                <div >
+                                    <div >
+                                        <div >
                                             Proposer un Prix
                                         </div>
-                                        <div class="col-md-1">
-                                            <div class="onoffswitch">
-                                                <input type="checkbox" class="onoffswitch-checkbox" name="prop_prix"
+                                        <div>
+                                            <div >
+                                                <input type="checkbox"  name="prop_prix"
                                                     id="myonoffswitch88" onclick="activate()">
-                                                <label class="onoffswitch-label" for="myonoffswitch88">
-                                                    <span class="onoffswitch-inner"></span>
-                                                    <span class="onoffswitch-switch"></span>
+                                                <label  for="myonoffswitch88">
+                                                    <span ></span>
+                                                    <span ></span>
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-md-8 row" id="prixprop" style="display:none">
-                                            <div class="col-md-6 no-padding">
+                                        <div id="prixprop" >
+                                            <div >
                                                 <input type="number" placeholder="Prix"
                                                     onchange="form1.deviseval.value=form1.devise.value" name="prix_prop"
-                                                    class="v1_106 classicInput"
-                                                    style="padding-left: 20px;width:  100%!important;">
+                                                    
+                                                    >
                                             </div>
-                                            <div class="col-md-6 col-xs-12 no-padding">
-                                                <select name="devise" class="v1_106 classicInput"
+                                            <div >
+                                                <select name="devise" 
                                                     onclick="form1.deviseval.value=form1.devise.value"
-                                                    style="padding-left: 20px;width:  100%!important;">
+                                                    >
                                                     <option value="FCFA">FCFA</option>
                                                     <option value="EURO">EURO</option>
                                                 </select>
@@ -465,65 +522,56 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row classicInput1" id="prixpropdetails" style="display:none">
-                                    <div class="row col-md-12">
-                                        <div class="col-md-3">
-                                            Modalité de payement <span style="color: red;">*</span>
+                                <div  id="prixpropdetails" >
+                                    <div >
+                                        <div >
+                                            Modalité de payement <span >*</span>
                                         </div>
-                                        <div class="col-md-3">
-                                            <input class="v1_106 classicInput" type="number"
+                                        <div >
+                                            <input  type="number"
                                                 onchange="form1.reste.value=form1.prix_prop.value-form1.avance.value"
                                                 placeholder="Au chargement" name="avance"
-                                                style="padding-left: 20px;width:  100%!important;">
+                                                >
                                         </div>
-                                        <div class="col-md-3">
-                                            <input class="v1_106 classicInput" type="number"
+                                        <div >
+                                            <input  type="number"
                                                 placeholder="A la livraison"
                                                 onfocus="form1.avance.value=form1.prix_prop.value-form1.reste.value"
-                                                name="reste" style="padding-left: 20px;width:  100%!important;">
+                                                name="reste" >
                                         </div>
-                                        <div class="col-md-3">
-                                            <input class="v1_106 classicInput" type="number" placeholder="devise"
+                                        <div >
+                                            <input  type="number" placeholder="devise"
                                                 onfocus="form1.avance.value=form1.prix_prop.value-form1.reste.value"
-                                                name="deviseval" style="padding-left: 20px;width:  100%!important;
-                                                                    color: #808080;
-                                                                        background-color: #eeecec;
-                                                                        height: 38px;
-                                                                        margin: 5px;
-                                                                        border-radius: 5px;
-                                                                        box-shadow: none;
-                                                                        border: none;
-                                                                        width: 100%;
-                                                                        padding: 0px 10px;" disabled>
+                                                name="deviseval"  disabled>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row classicInput1">
-                                    <div class="row col-md-12">
-                                        <div class="col-md-3">
+                                <div >
+                                    <div >
+                                        <div >
                                             Valeur de la marchandise
                                         </div>
-                                        <div class="col-md-1">
-                                            <div class="onoffswitch">
-                                                <input type="checkbox" class="onoffswitch-checkbox" name="mvaleur"
+                                        <div>
+                                            <div >
+                                                <input type="checkbox"  name="mvaleur"
                                                     id="myonoffswitch22" onclick="activate4()">
-                                                <label class="onoffswitch-label" for="myonoffswitch22">
-                                                    <span class="onoffswitch-inner"></span>
-                                                    <span class="onoffswitch-switch"></span>
+                                                <label  for="myonoffswitch22">
+                                                    <span ></span>
+                                                    <span ></span>
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-md-8 row" id="valeurm" style="display:none">
-                                            <div class="col-md-6 no-padding">
+                                        <div id="valeurm" >
+                                            <div >
                                                 <input type="number" placeholder="Prix"
                                                     onchange="form1.deviseval.value=form1.devise.value" name="prix_prop"
-                                                    class="v1_106 classicInput"
-                                                    style="padding-left: 20px;width:  100%!important;">
+                                                    
+                                                    >
                                             </div>
-                                            <div class="col-md-6 col-xs-12 no-padding">
-                                                <select name="devise" class="v1_106 classicInput"
+                                            <div >
+                                                <select name="devise" 
                                                     onclick="form1.deviseval.value=form1.devise.value"
-                                                    style="padding-left: 20px;width:  100%!important;">
+                                                    >
                                                     <option value="FCFA">FCFA</option>
                                                     <option value="EURO">EURO</option>
                                                 </select>
@@ -531,14 +579,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row classicInput1">
-                                    <div class="row col-md-12">
-                                        <div class="col-md-3">
-                                            Mode de payement<span style="color: red;">*</span>
+                                <div >
+                                    <div >
+                                        <div >
+                                            Mode de payement<span >*</span>
                                         </div>
-                                        <div class="col-md-3">
-                                            <select name="methodepayement" class="v1_106 classicInput"
-                                                style="padding-left: 20px;width:  100%!important;">
+                                        <div >
+                                            <select name="methodepayement" 
+                                                >
                                                 <option value="Espèce">Espèce</option>
                                                 <option value="Chèque">Chèque</option>
                                                 <option value="Virement">Virement</option>
@@ -549,37 +597,33 @@
                                 </div>
 
                             </div>
-                            <div id="alertDiv" style="display: none;"></div>
+                            <div id="alertDiv" ></div>
 
                         </div>
                     </div>
 
 
                 </div>
-                <div id="alertDiv" style="display: none;"></div>
+                <div id="alertDiv" ></div>
 
 
             </div>
 
         </div>
-    </div>
+    
 
-    </div>
-    </div>
-    <div class="col-md-12" style="display: inherit;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 50px;
-    ">
-        <button id="loginButton" class="aboute1_362"
-            style="color: white; width: unset!important;padding-left: 10px; padding-right: 10px; height: 40px!important;"
+   
+    
+    <div  >
+        <button id="loginButton" 
             type="submit">ENVOYER></button>
 
     </div>
+
 </form>
 
 </div>
 
 
 <?php } ?>
-<?php include "footer-new.php" ?>
+<?php /* include "footer-new.php" */ ?>

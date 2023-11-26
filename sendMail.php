@@ -26,8 +26,8 @@ function sendMail($email,$mesasge,$senderName){
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port =587 ;
 
-    $mail->setFrom($email,$senderName); //SMTP mail sender
-    $mail->addAddress(USERNAME); //mail recipient nnfranck78@gmail.com
+    $mail->setFrom($email,$senderName); //SMTP mail sender:
+    $mail->addAddress(USERNAME); //mail recipient recrutement@telemex.cm
     //$mail->addReplyTo(USERNAME,"Mohamed");
 
     $mail->isHTML(true);
