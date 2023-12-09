@@ -1,0 +1,134 @@
+[
+  {
+    "city": "Libreville", 
+    "lat": "0.3903", 
+    "lng": "9.4542", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Estuaire", 
+    "capital": "primary", 
+    "population": "797003", 
+    "population_proper": "797003"
+  }, 
+  {
+    "city": "Port-Gentil", 
+    "lat": "-0.7167", 
+    "lng": "8.7833", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Ogooué-Maritime", 
+    "capital": "admin", 
+    "population": "136462", 
+    "population_proper": "136462"
+  }, 
+  {
+    "city": "Franceville", 
+    "lat": "-1.6333", 
+    "lng": "13.5833", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Haut-Ogooué", 
+    "capital": "admin", 
+    "population": "110568", 
+    "population_proper": "110568"
+  }, 
+  {
+    "city": "Owendo", 
+    "lat": "0.2833", 
+    "lng": "9.5000", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Estuaire", 
+    "capital": "", 
+    "population": "79300", 
+    "population_proper": "79300"
+  }, 
+  {
+    "city": "Oyem", 
+    "lat": "1.6000", 
+    "lng": "11.5667", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Woleu-Ntem", 
+    "capital": "admin", 
+    "population": "60685", 
+    "population_proper": "60685"
+  }, 
+  {
+    "city": "Ntoum", 
+    "lat": "0.3844", 
+    "lng": "9.7539", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Estuaire", 
+    "capital": "", 
+    "population": "51954", 
+    "population_proper": "51954"
+  }, 
+  {
+    "city": "Moanda", 
+    "lat": "-1.5667", 
+    "lng": "13.2000", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Haut-Ogooué", 
+    "capital": "", 
+    "population": "39298", 
+    "population_proper": "39298"
+  }, 
+  {
+    "city": "Lambaréné", 
+    "lat": "-0.6883", 
+    "lng": "10.2319", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Moyen-Ogooué", 
+    "capital": "admin", 
+    "population": "38775", 
+    "population_proper": "38775"
+  }, 
+  {
+    "city": "Tchibanga", 
+    "lat": "-2.9333", 
+    "lng": "11.0000", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Nyanga", 
+    "capital": "admin", 
+    "population": "24000", 
+    "population_proper": "24000"
+  }, 
+  {
+    "city": "Mouila", 
+    "lat": "-1.8639", 
+    "lng": "11.0575", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Ngounié", 
+    "capital": "admin", 
+    "population": "22469", 
+    "population_proper": "22469"
+  }, 
+  {
+    "city": "Makokou", 
+    "lat": "0.5667", 
+    "lng": "12.8667", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Ogooué-Ivindo", 
+    "capital": "admin", 
+    "population": "17070", 
+    "population_proper": "13881"
+  }, 
+  {
+    "city": "Koulamoutou", 
+    "lat": "-1.1333", 
+    "lng": "12.4833", 
+    "country": "Gabon", 
+    "iso2": "GA", 
+    "admin_name": "Ogooué-Lolo", 
+    "capital": "admin", 
+    "population": "16222", 
+    "population_proper": "16000"
+  }
+]

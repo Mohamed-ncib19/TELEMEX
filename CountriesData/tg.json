@@ -1,0 +1,123 @@
+[
+  {
+    "city": "Lomé", 
+    "lat": "6.1319", 
+    "lng": "1.2228", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Maritime", 
+    "capital": "primary", 
+    "population": "837437", 
+    "population_proper": "33000"
+  }, 
+  {
+    "city": "Sokodé", 
+    "lat": "8.9833", 
+    "lng": "1.1333", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Centrale", 
+    "capital": "admin", 
+    "population": "113000", 
+    "population_proper": "113000"
+  }, 
+  {
+    "city": "Kpalimé", 
+    "lat": "6.9000", 
+    "lng": "0.6333", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Plateaux", 
+    "capital": "", 
+    "population": "100479", 
+    "population_proper": "75084"
+  }, 
+  {
+    "city": "Atakpamé", 
+    "lat": "7.5269", 
+    "lng": "1.1267", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Plateaux", 
+    "capital": "admin", 
+    "population": "84979", 
+    "population_proper": "84979"
+  }, 
+  {
+    "city": "Dapaong", 
+    "lat": "10.8667", 
+    "lng": "0.2000", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Savanes", 
+    "capital": "admin", 
+    "population": "58071", 
+    "population_proper": "58071"
+  }, 
+  {
+    "city": "Tsévié", 
+    "lat": "6.4333", 
+    "lng": "1.2167", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Maritime", 
+    "capital": "", 
+    "population": "55775", 
+    "population_proper": "55775"
+  }, 
+  {
+    "city": "Sansanné-Mango", 
+    "lat": "10.3556", 
+    "lng": "0.4756", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Savanes", 
+    "capital": "", 
+    "population": "42626", 
+    "population_proper": "41464"
+  }, 
+  {
+    "city": "Badou", 
+    "lat": "7.5833", 
+    "lng": "0.6000", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Plateaux", 
+    "capital": "", 
+    "population": "24000", 
+    "population_proper": "24000"
+  }, 
+  {
+    "city": "Bassar", 
+    "lat": "9.2500", 
+    "lng": "0.7833", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Kara", 
+    "capital": "", 
+    "population": "23181", 
+    "population_proper": "23181"
+  }, 
+  {
+    "city": "Bafilo", 
+    "lat": "9.3500", 
+    "lng": "1.2667", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Kara", 
+    "capital": "", 
+    "population": "23085", 
+    "population_proper": "23085"
+  }, 
+  {
+    "city": "Kara", 
+    "lat": "9.5511", 
+    "lng": "1.1861", 
+    "country": "Togo", 
+    "iso2": "TG", 
+    "admin_name": "Kara", 
+    "capital": "admin", 
+    "population": "", 
+    "population_proper": ""
+  }
+]

@@ -3,6 +3,7 @@
 <?php
 include 'config.php';
 session_start();
+
 header('Content-Type: text/html;charset=UTF-8');
 ?>
   <title>TELEMEX</title>
@@ -128,7 +129,7 @@ header('Content-Type: text/html;charset=UTF-8');
       </a>
 
       <ul id="nav-links" class=" text-white  w-full gap-12 transition-all duration-500 ">
-      <?php if (isset($_SESSION['login_user'])) { ?>
+      <?php if (isset($_SESSION['login_user'])) {  ?>
           <li class="before:ease relative h-auto p-2  rounded-md  text-center overflow-hidden   text-white shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500">
             
             <a class="relative z-10" href="chargement-new.php">Envoyer un colis</a>
@@ -146,9 +147,7 @@ header('Content-Type: text/html;charset=UTF-8');
 
           <?php if (isset($_SESSION['login_user'])) { ?>
           <li class="before:ease relative h-auto p-2  rounded-md  text-center overflow-hidden   text-white shadow-2xl transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500">
-          <a class="relative z-10"  href="historique-new.php?telephone=<?php echo $_SESSION[
-              'telephone'
-          ]; ?>">Historique</a>
+          <a class="relative z-10"  href="historique-new.php?telephone=<?php echo $_SESSION['telephone']; ?>">Historique</a>
         </li>
 					<?php } ?>
 
@@ -172,7 +171,7 @@ header('Content-Type: text/html;charset=UTF-8');
 
 <!--dropdown list-->
 <?php if(isset($_SESSION['login_user'])){ ?>
-<button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500" data-dropdown-trigger="hover" class=" hover:shadow-2xl hover:shadow-purple-800 p-2 focus:ring-2 focus:ring-purple-600 focus:outline-none rounded-full text-[3rem]  text-center inline-flex items-center transition-all duration-500" type="button">
+<button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500" data-dropdown-trigger="click" class=" hover:shadow-2xl hover:shadow-purple-800 p-2 focus:ring-2 focus:ring-purple-600 focus:outline-none rounded-full text-[3rem]  text-center inline-flex items-center transition-all duration-500" type="button">
 <iconify-icon icon="mingcute:user-4-line" style="color:#D0D0D0	;"></iconify-icon>
 </button>
 

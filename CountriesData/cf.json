@@ -1,0 +1,233 @@
+[
+  {
+    "city": "Bangui", 
+    "lat": "4.3733", 
+    "lng": "18.5628", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Bangui", 
+    "capital": "primary", 
+    "population": "889231", 
+    "population_proper": "889231"
+  }, 
+  {
+    "city": "Bimo", 
+    "lat": "4.2558", 
+    "lng": "18.4042", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Ombella-Mpoko", 
+    "capital": "", 
+    "population": "267859", 
+    "population_proper": "267859"
+  }, 
+  {
+    "city": "Mambéré", 
+    "lat": "5.5000", 
+    "lng": "15.5000", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Nana-Mambéré", 
+    "capital": "", 
+    "population": "233666", 
+    "population_proper": "233666"
+  }, 
+  {
+    "city": "Bimbo", 
+    "lat": "4.3313", 
+    "lng": "18.5163", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Ombella-Mpoko", 
+    "capital": "admin", 
+    "population": "124176", 
+    "population_proper": "124176"
+  }, 
+  {
+    "city": "Berbérati", 
+    "lat": "4.2614", 
+    "lng": "15.7894", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Mambéré-Kadéï", 
+    "capital": "admin", 
+    "population": "76918", 
+    "population_proper": "76918"
+  }, 
+  {
+    "city": "Bocaranga", 
+    "lat": "6.9844", 
+    "lng": "15.6408", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Ouham-Pendé", 
+    "capital": "", 
+    "population": "61190", 
+    "population_proper": "61190"
+  }, 
+  {
+    "city": "Carnot", 
+    "lat": "4.9400", 
+    "lng": "15.8700", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Mambéré-Kadéï", 
+    "capital": "", 
+    "population": "45421", 
+    "population_proper": "45421"
+  }, 
+  {
+    "city": "Nola", 
+    "lat": "3.5333", 
+    "lng": "16.0667", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Sangha-Mbaéré", 
+    "capital": "admin", 
+    "population": "41462", 
+    "population_proper": "41462"
+  }, 
+  {
+    "city": "Bambari", 
+    "lat": "5.7653", 
+    "lng": "20.6742", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Ouaka", 
+    "capital": "admin", 
+    "population": "41356", 
+    "population_proper": "41356"
+  }, 
+  {
+    "city": "Bouar", 
+    "lat": "5.9500", 
+    "lng": "15.6000", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Nana-Mambéré", 
+    "capital": "admin", 
+    "population": "40353", 
+    "population_proper": "40353"
+  }, 
+  {
+    "city": "Bossangoa", 
+    "lat": "6.4833", 
+    "lng": "17.4500", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Ouham", 
+    "capital": "admin", 
+    "population": "36478", 
+    "population_proper": "36478"
+  }, 
+  {
+    "city": "Bria", 
+    "lat": "6.5369", 
+    "lng": "21.9919", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Haute-Kotto", 
+    "capital": "admin", 
+    "population": "35204", 
+    "population_proper": "35204"
+  }, 
+  {
+    "city": "Bangassou", 
+    "lat": "4.7374", 
+    "lng": "22.8195", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Mbomou", 
+    "capital": "admin", 
+    "population": "31453", 
+    "population_proper": "31453"
+  }, 
+  {
+    "city": "Kaga Bandoro", 
+    "lat": "7.0000", 
+    "lng": "19.1833", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Nana-Grébizi", 
+    "capital": "admin", 
+    "population": "24661", 
+    "population_proper": "24661"
+  }, 
+  {
+    "city": "Sibut", 
+    "lat": "5.7333", 
+    "lng": "19.0833", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Kémo", 
+    "capital": "admin", 
+    "population": "22419", 
+    "population_proper": "22419"
+  }, 
+  {
+    "city": "Mbaïki", 
+    "lat": "3.8833", 
+    "lng": "18.0000", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Lobaye", 
+    "capital": "admin", 
+    "population": "22166", 
+    "population_proper": "22166"
+  }, 
+  {
+    "city": "Bozoum", 
+    "lat": "6.3172", 
+    "lng": "16.3783", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Ouham-Pendé", 
+    "capital": "admin", 
+    "population": "20665", 
+    "population_proper": "20665"
+  }, 
+  {
+    "city": "Ndélé", 
+    "lat": "8.4092", 
+    "lng": "20.6531", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Bamingui-Bangoran", 
+    "capital": "admin", 
+    "population": "13704", 
+    "population_proper": "13704"
+  }, 
+  {
+    "city": "Obo", 
+    "lat": "5.4000", 
+    "lng": "26.5000", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Haut-Mbomou", 
+    "capital": "admin", 
+    "population": "12887", 
+    "population_proper": "7187"
+  }, 
+  {
+    "city": "Birao", 
+    "lat": "10.2940", 
+    "lng": "22.7820", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Vakaga", 
+    "capital": "admin", 
+    "population": "10178", 
+    "population_proper": "10178"
+  }, 
+  {
+    "city": "Mobaye", 
+    "lat": "4.3167", 
+    "lng": "21.1833", 
+    "country": "Central African Republic", 
+    "iso2": "CF", 
+    "admin_name": "Basse-Kotto", 
+    "capital": "admin", 
+    "population": "7176", 
+    "population_proper": "7176"
+  }
+]
