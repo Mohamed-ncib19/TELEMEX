@@ -124,7 +124,7 @@ header('Content-Type: text/html;charset=UTF-8');
 <!-- Navbar start -->
 <nav id="navbar" class="bg-[#2B2E86] fixed top-0 h-[20vh] z-40 w-full p-2 transition-all duration-500">
     <!--Logo-->
-    <a id="navbar-brand" href="index.php">
+    <a id="navbar-brand" href="index.php" class="w-full" >
         <img src="newdesign/images/logo.png" id="navbar-logo" alt="Telemex_Logo">
       </a>
 
@@ -233,22 +233,22 @@ header('Content-Type: text/html;charset=UTF-8');
       <a class=" w-full " href="profile.php" >
 
         <?php } ?>
-        <iconify-icon class="text-[3rem]" icon="mingcute:user-4-line" style="color: white;"></iconify-icon>
+        <iconify-icon class="text-[5rem]" icon="mingcute:user-4-line" style="color: white;"></iconify-icon>
       </a>
 
 <?php }else{ ?>
   <a href="login-new.php">
-  <iconify-icon class="text-[3rem]" icon="mingcute:user-4-line" style="color: white;"></iconify-icon>
+  <iconify-icon class="text-[5rem]" icon="mingcute:user-4-line" style="color: white;"></iconify-icon>
 
   </a>
   <?php } ?>
   </div>
 
       <!--Toggle Button-->
-    <button id="btnSidebarToggler" type="button" class="text-white hover:text-gray-200">
-    <iconify-icon id="navClosed" icon="uil:bars" style="color: white;"></iconify-icon>
+    <button id="btnSidebarToggler" type="button" class="text-white  w-full hover:text-gray-200 ">
+    <iconify-icon id="navClosed" icon="uil:bars" class="text-[5rem]" ></iconify-icon>
 
-    <iconify-icon id="navOpen" class="hidden" icon="ic:round-close" style="color: white;"></iconify-icon>
+    <iconify-icon id="navOpen" class="hidden text-[5rem] " icon="ic:round-close"></iconify-icon>
 
     </button>
     </div>
@@ -257,7 +257,7 @@ header('Content-Type: text/html;charset=UTF-8');
 
 
 <!-- Sidebar start-->
-<div id="containerSidebar" class="z-40 flex justify-center items-center text-white m-auto text-center">
+<div id="containerSidebar" class="z-40 flex justify-center items-center text-white m-auto text-center text-[7rem]">
     <div id="container-sidebar" class=" relative z-40">
         <nav id="sidebar"
             class=" bg-[#2B2E86] fixed right-0 bottom-0 flex w-[60%] translate-x-full flex-col overflow-x-auto">
@@ -268,7 +268,7 @@ header('Content-Type: text/html;charset=UTF-8');
                 <ul id="responsive-nav-links" class="flex flex-col w-full justify-center items-center gap-4  mt-8 divide-y divide-gray-100">
 
                 <?php if (isset($_SESSION['login_user'])) { ?>
-                  <li class=" flex items-center before:ease relative h-auto   overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
+                  <li class=" flex items-center before:ease relative h-auto  overflow-hidden  text-[2rem]  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
       <?php if ($_SESSION['type'] == 'admin') { ?> 
         <a class="" href="mainindex.php" >
 
@@ -282,7 +282,7 @@ header('Content-Type: text/html;charset=UTF-8');
         </div>
       </a>
     </li>
-          <li class=" flex flex-row justify-start items-center  before:ease relative h-auto  overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
+          <li class=" flex flex-row justify-start items-center  before:ease relative h-auto text-[2rem] overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
             <a class="flex flex-row justify-center items-center" href="chargement-new.php">
               <iconify-icon  icon="mdi:truck-delivery-outline" style="color: white;"></iconify-icon>
               <p>Envoyer un colis</p
@@ -290,14 +290,14 @@ header('Content-Type: text/html;charset=UTF-8');
           </li>
 					<?php } ?>
 
-          <li class=" flex flex-row justify-start items-center  before:ease relative h-auto  overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
+          <li class=" flex flex-row justify-start items-center  before:ease relative h-auto text-[2rem] overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
             <a class="flex flex-row justify-center items-center " href="inscription1.php">
             <iconify-icon  icon="fluent-mdl2:join-online-meeting" style="color:white;"></iconify-icon>
              <p>Nous rejoindre</p>
             </a>
           </li>
 
-          <li class=" flex flex-row justify-start  items-center before:ease relative h-auto overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
+          <li class=" flex flex-row justify-start  items-center before:ease text-[2rem] relative h-auto overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
             <a class="flex flex-row justify-center items-center" href="https://telemex.suivi.telefret.com/">
             <iconify-icon icon="ic:outline-location-on" style="color: white;"></iconify-icon>  
             <p>Suivi</p>
@@ -305,7 +305,7 @@ header('Content-Type: text/html;charset=UTF-8');
           </li>
 
           <?php if (isset($_SESSION['login_user'])) { ?>
-          <li class="flex flex-row justify-start items-center before:ease relative h-auto overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
+          <li class="flex flex-row justify-start items-center text-[2rem] before:ease relative h-auto overflow-hidden   text-white  transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500 w-full">
           <a class="flex flex-row justify-center items-center"  href="historique-new.php?telephone=<?php echo $_SESSION['telephone']; ?>">
           <iconify-icon  icon="uis:history-alt" style="color: white;"></iconify-icon>
          <p>Historique</p>
@@ -314,7 +314,7 @@ header('Content-Type: text/html;charset=UTF-8');
 					<?php } ?>
           <?php if (!isset($_SESSION['login_user'])) { ?>
 
-<li id="login-button" class="bg-[#E92C24]  px-3 shadow-md shadow-gray-500  flex flex-row justify-center items-center m-auto rounded-full before:ease relative hover:shadow-md hover:shadow-red-500 overflow-hidden transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500">
+<li id="login-button" class="bg-[#E92C24]  px-3 shadow-md text-[2rem] shadow-gray-500  flex flex-row justify-center items-center m-auto rounded-full before:ease relative hover:shadow-md hover:shadow-red-500 overflow-hidden transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500">
 <a href="login-new.php" class="w-full flex flex-row justify-center items-center" >
       <p class="" >Se connecter</p>
       <iconify-icon icon="mdi:sign-in" style="color: white;"></iconify-icon>
@@ -323,9 +323,9 @@ header('Content-Type: text/html;charset=UTF-8');
 
   <?php } ?>
 <?php if(isset($_SESSION['login_user'])){ ?>
-        <a href="logout.php" class="bg-[#F39F5A] p-3 flex flex-row justify-center items-center m-auto gap-2 rounded-full before:ease relative hover:shadow-md overflow-hidden transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500">
+        <a href="logout.php" class="bg-[#F39F5A] p-3 text-[2rem] flex flex-row justify-center items-center m-auto gap-2 rounded-full before:ease relative hover:shadow-md overflow-hidden transition-all before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40 duration-500">
           <p>Déconnexion</p>
-          <iconify-icon class="text-[2rem]" icon="material-symbols:logout" style="color: white;"></iconify-icon>
+          <iconify-icon class="text-[3rem]" icon="material-symbols:logout" style="color: white;"></iconify-icon>
         </a>
   <?php } ?>
 

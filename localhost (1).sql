@@ -18,9 +18,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 -- utf8mb4_0900_ai_ci
--- Base de données : `teleme6060_telemex`
---
-CREATE DATABASE IF NOT EXISTS `teleme6060_telemex` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+-- Base de données : `teleme6060_telemex`;
+--teleme6060_telemex;
+
+
+CREATE DATABASE IF NOT EXISTS `teleme6060_telemex` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `teleme6060_telemex`;
 
 -- --------------------------------------------------------
