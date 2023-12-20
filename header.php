@@ -1,8 +1,7 @@
-<?php 
-    include("config.php");
-    session_start();
-	header("Content-Type: text/html;charset=UTF-8");
-
+<?php
+include 'config.php';
+session_start();
+header('Content-Type: text/html;charset=UTF-8');
 ?>
 
 
@@ -20,17 +19,17 @@
 
 	    <title>TELEFRET</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+       <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script> -->
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
 
-    <link href="js/datatable/bootstrap.min.css" rel="stylesheet">
+ <!--    <link href="js/datatable/bootstrap.min.css" rel="stylesheet">
     <link href="js/datatable/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="js/datatable/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="js/datatable/buttons.bootstrap.min.css" rel="stylesheet"> -->
 
     <link href='DataTables/datatables.min.css' rel='stylesheet' type='text/css'>
 
@@ -304,13 +303,9 @@ tr:nth-child(even) {
 function validsuivi(id_notification) {
      
     var val="";
-    <?php
-    if (isset( $_GET['id_charg'])) {
-        ?>
-        val=<?php echo $_GET['id_charg'];?>;
-        <?php
-    }
-    ?>
+    <?php if (isset($_GET['id_charg'])) { ?>
+        val=<?php echo $_GET['id_charg']; ?>;
+        <?php } ?>
      $.ajax({
          type: "post",
          url: "change_statusgps.php?id_charg="+val ,
@@ -776,8 +771,8 @@ table.dataTable,.dataTables_wrapper {
 
     <div id="confirm">
             <div class="message"></div>
-            <button class="yes" style="cusor:pointer;background-color:#f4d1d1!important ;">Yes</button>
-            <button class="no danger" style="cusor:pointer;">No</button>
+            <button class="yes" >Yes</button>
+            <button class="no danger">No</button>
         </div>
         
 
@@ -792,25 +787,36 @@ table.dataTable,.dataTables_wrapper {
 						  					<div class="call-to-action">
 						  						<ul class="list-inline">
 												
-                                                    <?php
-                                                        if((isset($_SESSION['login_user'])) ) {
-															 ?>
+                                                    <?php if (
+                                                        isset(
+                                                            $_SESSION[
+                                                                'login_user'
+                                                            ]
+                                                        )
+                                                    ) { ?>
 															 
                                                              <?php
-                                                            if ($_SESSION['type']=="client"){
-                                                    ?>		
-                                                    	 <li><a href="historique_client.php?telephone=<?php echo $_SESSION['telephone'] ?>" class="hidden-xs">Mes envois</a></li>
+                                                             if (
+                                                                 $_SESSION[
+                                                                     'type'
+                                                                 ] == 'client'
+                                                             ) { ?>		
+                                                    	 <li><a href="historique_client.php?telephone=<?php echo $_SESSION[
+                                                          'telephone'
+                                                      ]; ?>" class="hidden-xs">Mes envois</a></li>
 												
                                                         <li><a href="espace-client.php" class="hidden-xs">Envoyer un colis </a></li>
-															<?php 
-															} 
-                                                            if ($_SESSION['type']=="transporteur"){
-                                                    ?>
+															<?php }
+                                                             if (
+                                                                 $_SESSION[
+                                                                     'type'
+                                                                 ] ==
+                                                                 'transporteur'
+                                                             ) { ?>
 														
 						  							            <li><a href="abonnement.php" class="hidden-xs">Mes véhicules</a></li>
-															<?php 
-															} 
-                                                            $type=$_SESSION['type'];
+															<?php }
+                                                             /* $type=$_SESSION['type'];
                                                             $tel=$_SESSION['telephone'];
                                                             $select="";
                                                           
@@ -829,20 +835,84 @@ table.dataTable,.dataTables_wrapper {
                                                             if($type=="client"){
                                                                 $empQuery = "select *,notifications.telephone as telephonenotifications,notifications.id as id_notifications ,postuler.id as id_postuler ,chargement.telephone as chargement_telephone from chargement, transporteur  ,postuler ,notifications   WHERE 1 and notifications.id_postuler=postuler.id and postuler.id_chargement=chargement.id_charg and notifications.statut=0 ".$select."  GROUP BY notifications.id  ";
                                                             }else{
-                                                                $empQuery = "select *,notifications.telephone as telephonenotifications,notifications.id as id_notifications ,chargement.telephone as chargement_telephone from chargement, transporteur ,notifications   WHERE 1 and notifications.statut=0 ".$select."  GROUP BY notifications.id  ";
-                                                            }
+                                                                $empQuery = "select *, notifications.telephone as telephonenotifications,notifications.id as id_notifications ,chargement.telephone as chargement_telephone from chargement, transporteur ,notifications   WHERE 1 and notifications.statut=0 ".$select."  GROUP BY notifications.id  ";
+                                                            } */
 
+                                                             $type =
+                                                                 $_SESSION['type'];
+                                                             $tel =
+                                                                 $_SESSION['telephone'];
+                                                             $select = '';
 
-                                                            $empRecords = mysqli_query($db, $empQuery);
+                                                             if (
+                                                                 $type =='transporteur') {
+                                                                 $select .= "  AND notifications.statut = 0 AND (chargement.telephone = transporteur.telephone AND ((notifications.telephone = '$tel' AND notifications.type != 'Soumission') OR notifications.to_telephone = '$tel'))";
+                                                             } else if (
+                                                                 $type =='client') {
+                                                                 $select .= " AND chargement.telephone = transporteur.telephone AND notifications.type = 'Soumission' AND transporteur.telephone = '$tel'";
+                                                             } else {
+                                                                 $select .=
+                                                                     ' AND ((chargement.telephone = transporteur.telephone) OR (postuler.telephone = transporteur.telephone))';
+                                                             }
 
-                                                            if ($empRecords) {
-                                                                $totalRecordwithFilter = mysqli_num_rows($empRecords);
+                                                             if ($type == "client") {
+                                                                $empQuery = "SELECT
+                                                                                *,
+                                                                                notifications.telephone AS telephonenotifications,
+                                                                                notifications.id AS id_notifications,
+                                                                                postuler.id AS id_postuler,
+                                                                                postuler,
+                                                                                chargement.telephone AS chargement_telephone
+                                                                             FROM
+                                                                                chargement
+                                                                             JOIN
+                                                                                transporteur ON chargement.telephone = transporteur.telephone
+                                                                             JOIN
+                                                                                postuler ON postuler.id_chargement = chargement.id_charg
+                                                                             JOIN
+                                                                                notifications ON notifications.id_postuler = postuler.id
+                                                                             WHERE
+                                                                                notifications.statut = 0 $select
+                                                                             GROUP BY
+                                                                                notifications.id";
                                                             } else {
-                                                                // Handle the case where the query failed or returned no results
-                                                                $totalRecordwithFilter = 0; // Set a default value or handle the error as needed
+                                                                $empQuery = "SELECT
+                                                                                *,
+                                                                                notifications.telephone AS telephonenotifications,
+                                                                                notifications.id AS id_notifications,
+                                                                                postuler.telephone AS postuler_telephone,
+                                                                                chargement.telephone AS chargement_telephone
+                                                                             FROM
+                                                                                chargement
+                                                                             JOIN
+                                                                                transporteur ON chargement.telephone = transporteur.telephone
+                                                                             JOIN
+                                                                                notifications ON chargement.telephone = notifications.telephone
+                                                                            JOIN
+                                                                                postuler on postuler.telephone = transporteur.telephone
+                                                                             WHERE
+                                                                                notifications.statut = 0 $select
+                                                                             GROUP BY
+                                                                                notifications.id";
                                                             }
+                                                            
 
-															?>
+                                                             $empRecords = mysqli_query(
+                                                                 $db,
+                                                                 $empQuery
+                                                             );
+                                                             
+
+                                                             if ($empRecords) {
+                                                                 $totalRecordwithFilter = mysqli_num_rows(
+                                                                     $empRecords
+                                                                 );
+                                                                
+                                                             } else {
+                                                                 // Handle the case where the query failed or returned no results
+                                                                 $totalRecordwithFilter = 0; // Set a default value or handle the error as needed
+                                                             }
+                                                             ?>
 															
 														
 															<li><a href="https://telemex.suivi.telefret.com" target="_blank">Suivi</a></li>
@@ -850,51 +920,46 @@ table.dataTable,.dataTables_wrapper {
                                                             <li><a href="notifications.php" >Mes Notifications <span class="badge " style="background-color: #e71010;" id="nbrnotification"><?php echo $totalRecordwithFilter; ?></span></a></li>
 
 															
-                                                    <?php
-                                                        }
-                                                    ?>
+                                                    <?php } ?>
                                                     
-                                                    <?php
-                                                        if(!isset($_SESSION['login_user'])) {
-													?>
+                                                    <?php if (
+                                                        !isset(
+                                                            $_SESSION[
+                                                                'login_user'
+                                                            ]
+                                                        )
+                                                    ) { ?>
 															<li class="pull-right"><a data-toggle="modal" data-target="#inscription" class="hidden-lg hidden-md">S'inscrire</a></li>
-                                                    <?php
-                                                            if(!empty($_GET['message'])) {
-																echo "<li class='pull-right'><a id='logintest' data-toggle='modal' data-target='#login' class='hidden-lg hidden-md'>Réessayer</a></li>" ; 
-                                                            }
-															else if(!empty($_GET['verif'])) {
-																echo "<li class='pull-right'><a id='logintest' data-toggle='modal' data-target='#login' class='hidden-lg hidden-md'>Vérifier votre compte</a></li>" ;
-                                                            }
-                                                            else{
-
-                                                    ?>
+                                                    <?php if (
+                                                        !empty($_GET['message'])
+                                                    ) {
+                                                        echo "<li class='pull-right'><a id='logintest' data-toggle='modal' data-target='#login' class='hidden-lg hidden-md'>Réessayer</a></li>";
+                                                    } elseif (
+                                                        !empty($_GET['verif'])
+                                                    ) {
+                                                        echo "<li class='pull-right'><a id='logintest' data-toggle='modal' data-target='#login' class='hidden-lg hidden-md'>Vérifier votre compte</a></li>";
+                                                    } else {
+                                                         ?>
 																<li class="pull-right"><a id='logintest' data-toggle="modal" data-target="#login" class="hidden-lg hidden-md">Connexion</a></li>
 															<?php
-															}
-                                                        }
-														else{
-															?>    
+                                                    }} else { ?>    
 															<li class="hidden-md hidden-lg"><a href="logout.php"> 
-																<?php 
-                                                                if(isset( $_SESSION['r_s'])) {
-                                                                    $clean_string = str_replace([" ", ',', '.', '!', '?', '-', '_', ';', ':', '(', ')'], '', $_SESSION['r_s']);
+																<?php if (isset($_SESSION['r_s'])) {
+                    $clean_string = str_replace(
+                        [' ', ',', '.', '!', '?', '-', '_', ';', ':', '(', ')'],
+                        '',
+                        $_SESSION['r_s']
+                    );
 
-                                                                    if($clean_string !="") {
-                                                                        echo $_SESSION['r_s'] ;
-    
-                                                                    } 
-                                                                    else {
-                                                                        echo $_SESSION['nom'];  
-    
-                                                                    } 
-                                                                } 
-                                                                
-																?> 
+                    if ($clean_string != '') {
+                        echo $_SESSION['r_s'];
+                    } else {
+                        echo $_SESSION['nom'];
+                    }
+                } ?> 
 
                                                             Déconnexion</a></li>  
-                                                    <?php
-                                                    }
-                                                    ?>
+                                                    <?php } ?>
                                                     
                                                     
 						  							
@@ -921,11 +986,11 @@ table.dataTable,.dataTables_wrapper {
 					  			</div>
 				  		</nav>
 						
-						<nav class="navbar navbar-default" role="navigation">
+						<nav class="navbar navbar-default" style="background-image: url('./newdesign/images/admin-hero-background.png'); width: 100%; height:40vh;" role="navigation">
 							
-							<div class="container mainnav">
-								<div class="navbar-header">
-									<div class="logo"><a class="navbar-brand" href="index.php"><img class="slogo" src="img/logo.png" alt=""></a></div>
+							<div class="container mainnav" >
+								<div class="navbar-header"  >
+									<div class="logo"><a class="navbar-brand" href="index.php"><img class="slogo" src="./newdesign/images/v1_239.png" alt="TELEMEX"></a></div>
 									<button type="button" class="navbar-toggle collapsed pull-right hidden-lg hidden-sm hidden-md " >
 			                          <span class="sr-only">Toggle navigation</span>
 			                          <i class="fa fa-bars"></i>
@@ -935,11 +1000,12 @@ table.dataTable,.dataTables_wrapper {
 								<div class="collapse navbar-collapse navbar-collapse">
 									<ul class="nav navbar-nav pad-l-30 navsze">
                                     
-                                        <?php 
-                                            if  (isset($_SESSION['login_user'])) { 
-                                                
-                                                if ($_SESSION['type']=='admin'){
-                                        ?> 
+                                        <?php if (
+                                            isset($_SESSION['login_user'])
+                                        ) {
+                                            if (
+                                                $_SESSION['type'] == 'admin'
+                                            ) { ?> 
                                                     <li><a href="index-admin.php">Espace Admin</a></li> 
                                                     <li><a href="espace-transporteur.php">Espace Commercial</a></li> 
 
@@ -947,71 +1013,68 @@ table.dataTable,.dataTables_wrapper {
                                                     
                                                     <li><a href="https://telemex.suivi.telefret.com" target="_blank">Suivi</a></li> -->
 
-                                       <?php 
-                                                }
-    
-                                                else if($_SESSION['type']=='transporteur'){ 
-                                        ?>
+                                       <?php } elseif (
+                                                $_SESSION['type'] ==
+                                                'transporteur'
+                                            ) { ?>
                                         			<li><a href="index-admin.php">Espace Admin</a></li>                                        
                                                     <li><a href="espace-transporteur.php">Espace Commercial</a></li> 
 													<!--<li><a href="mon-compte.php">Mon compte</a></li>-->
                                         
-                                       <?php    
-                                                }
-                                                else if($_SESSION['type']=='client'){ 
-                                        ?>
+                                       <?php } elseif (
+                                                $_SESSION['type'] == 'client'
+                                            ) { ?>
                                         
                                                     <!-- <li><a href="espace-client.php">Espace Expediteurs</a></li> -->
 													<!-- <li><a href="mon-compte.php">Mon compte</a></li>-->
-                                       <?php        
-                                                } 
-                                            }
-                                        
-                                        ?>
+                                       <?php }
+                                        } ?>
                                                        
 									</ul>
                                     <ul class="nav navbar-nav pad-l-30 navsze pull-right right-nav hidden-sm">
                                         
-                                        <?php
-                                            if(! isset($_SESSION['login_user'])) {
-                                                ?>
+                                        <?php if (
+                                            !isset($_SESSION['login_user'])
+                                        ) { ?>
                                                 <li><a data-toggle='modal' data-target='#inscription' href='#'>S'inscrire</a></li>
-                                        <?php
-                                                if(!empty($_GET['message'])) {
-                                                    echo "<li><a data-toggle='modal' data-target='#login' href='#'>Réessayer</a></li>" ; 
-                                                }
-												else if(!empty($_GET['verif'])) {
-													echo "<li><a data-toggle='modal' data-target='#login' href='#'>Vérifier votre compte</a></li>" ;
-												}
-                                                else{
-                                        ?>
+                                        <?php if (!empty($_GET['message'])) {
+                                            echo "<li><a data-toggle='modal' data-target='#login' href='#'>Réessayer</a></li>";
+                                        } elseif (!empty($_GET['verif'])) {
+                                            echo "<li><a data-toggle='modal' data-target='#login' href='#'>Vérifier votre compte</a></li>";
+                                        } else {
+                                             ?>
                                             <li><a data-toggle="modal" data-target="#login" href='#'>Connexion</a></li>
                                         <?php
-                                            }
-                                            }
-                                        else{
-                                        ?>    
+                                        }} else { ?>    
                                             <li><a onclick="localStorage.removeItem('access_token');" href="logout.php"> 
-                                            <?php 
-                                                                if(isset( $_SESSION['r_s'])) {
-                                                                    $clean_string = str_replace([" ", ',', '.', '!', '?', '-', '_', ';', ':', '(', ')'], '', $_SESSION['r_s']);
+                                            <?php if (isset($_SESSION['r_s'])) {
+                                                $clean_string = str_replace(
+                                                    [
+                                                        ' ',
+                                                        ',',
+                                                        '.',
+                                                        '!',
+                                                        '?',
+                                                        '-',
+                                                        '_',
+                                                        ';',
+                                                        ':',
+                                                        '(',
+                                                        ')',
+                                                    ],
+                                                    '',
+                                                    $_SESSION['r_s']
+                                                );
 
-                                                                    if($clean_string !="") {
-                                                                        echo $_SESSION['r_s'] ;
-    
-                                                                    } 
-                                                                    else {
-                                                                        echo $_SESSION['nom'];  
-    
-                                                                    } 
-                                                                } 
-                                                                
-																?> 
+                                                if ($clean_string != '') {
+                                                    echo $_SESSION['r_s'];
+                                                } else {
+                                                    echo $_SESSION['nom'];
+                                                }
+                                            } ?> 
                                                 
                                                 Deconnexion</a></li>  
-                                        <?php
-                                        }
-                                        ?>
+                                        <?php } ?>
                                     </ul>
                                     
                                     
@@ -1031,24 +1094,18 @@ table.dataTable,.dataTables_wrapper {
                                                     <div class="col-xs-12">
 														<span class="section-sub sections-title">
 														
-															<?php 
-															if(!empty($_GET['verif'])) {
-																echo "Vérifier votre compte" ;
-															} 
-															else {
-																echo "Connectez Vous" ;
-															} 
-															?>
+															<?php if (!empty($_GET['verif'])) {
+                   echo 'Vérifier votre compte';
+               } else {
+                   echo 'Connectez Vous';
+               } ?>
 														
 														</span>
-														<?php
-                                                        if(!empty($_GET['message'])) {
-															echo "<br><br><span class=''>". $_GET['message'] ."</span>" ; 
-														}
-														else if(!empty($_GET['verif'])) {
-															echo "<br><br><span class=''>". $_GET['verif'] ."</span>" ; 
-														}
-														?>	
+														<?php if (!empty($_GET['message'])) {
+                  echo "<br><br><span class=''>" . $_GET['message'] . '</span>';
+              } elseif (!empty($_GET['verif'])) {
+                  echo "<br><br><span class=''>" . $_GET['verif'] . '</span>';
+              } ?>	
                                                         <br>
                                                         <br>
                                                     </div>
@@ -1070,23 +1127,15 @@ table.dataTable,.dataTables_wrapper {
                                                         </div>
                                                         
                                                        
-														<?php
-                                                        if(!empty($_GET['verif'])) {
-														?>
+														<?php if (!empty($_GET['verif'])) { ?>
 															<div class="col-sm-12">
 																<input type="text" pattern="[0-9]{4}" name="verifcode" placeholder="Code de Vérification de Tél | Email" required>
 															</div>
-														<?php
-														}
-														?>
+														<?php } ?>
                                                         <div class="col-sm-12 regle-form">
-															<?php
-															if(!empty($_GET['verif'])) {
-															?>
+															<?php if (!empty($_GET['verif'])) { ?>
 																<a href = "javascript:;" target=_blank onclick = "this.href='sendcode.php?tel=' + document.getElementById('user').value">Cliquer ici pour renvoyer le code</a><br>
-															<?php
-															}
-															?>
+															<?php } ?>
 															<a href="sendpass.php">Mot de Passe oublié ?</a><br>
 															<a href="#" data-toggle="modal" data-target="#inscription" >Vous n'avez pas de compte ? inscrivez vous </a>
 															<input class="pull-right" type="submit" value="Connexion">
@@ -1114,54 +1163,38 @@ table.dataTable,.dataTables_wrapper {
                                                     <div class="col-xs-12">
 														<span class="section-sub sections-title">
 														
-															<?php 
-															if(!empty($_GET['success'])) {
-																echo "<br>Changement Réussi" ;
-															} 
-															?>
+															<?php if (!empty($_GET['success'])) {
+                   echo '<br>Changement Réussi';
+               } ?>
 															
-															<?php 
-															if(!empty($_GET['ban'])) {
-																echo "<br>Compte Banni" ;
-															} 
-															?>
+															<?php if (!empty($_GET['ban'])) {
+                   echo '<br>Compte Banni';
+               } ?>
 															
-															<?php 
-															if(!empty($_GET['ok'])) {
-																echo "<br>Poste Réussi" ;
-															} 
-															?>
+															<?php if (!empty($_GET['ok'])) {
+                   echo '<br>Poste Réussi';
+               } ?>
 															
-															<?php 
-															if(!empty($_GET['error'])) {
-																echo "<br>Erreur" ;
-															} 
-															?>
+															<?php if (!empty($_GET['error'])) {
+                   echo '<br>Erreur';
+               } ?>
 														
 														</span>
-														<?php
-                                                        if(!empty($_GET['success'])) {
-															echo "<br><br><span class=''>". $_GET['success'] ."</span>" ; 
-														}
-														?>
+														<?php if (!empty($_GET['success'])) {
+                  echo "<br><br><span class=''>" . $_GET['success'] . '</span>';
+              } ?>
 														
-														<?php
-                                                        if(!empty($_GET['ban'])) {
-															echo "<br><br><span class=''>". $_GET['ban'] ."</span>" ; 
-														}
-														?>
+														<?php if (!empty($_GET['ban'])) {
+                  echo "<br><br><span class=''>" . $_GET['ban'] . '</span>';
+              } ?>
 														
-														<?php
-                                                        if(!empty($_GET['ok'])) {
-															echo "<br><br><span class=''>". $_GET['ok'] ."</span>" ; 
-														}
-														?>
+														<?php if (!empty($_GET['ok'])) {
+                  echo "<br><br><span class=''>" . $_GET['ok'] . '</span>';
+              } ?>
 														
-														<?php
-                                                        if(!empty($_GET['error'])) {
-															echo "<br><br><span class=''>". $_GET['error'] ."</span>" ; 
-														}
-														?>	
+														<?php if (!empty($_GET['error'])) {
+                  echo "<br><br><span class=''>" . $_GET['error'] . '</span>';
+              } ?>	
                                                         <br>
                                                         <br>
                                                     </div>

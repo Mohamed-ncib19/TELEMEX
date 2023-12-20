@@ -50,6 +50,7 @@ function initialize(){
        });
        latitude.value = data[0]['lat']
        longitude.value = data[0]['lng']
+     
         
       })
       .catch((error) => console.error(error));
@@ -57,20 +58,22 @@ function initialize(){
     
 }
 //remove existed options_charg from "villes"
-function removeAll(selectBox) {
+function removeAll(selectBox){
   while (selectBox.options.length > 0) {
     selectBox.remove(0);
   }
 }
 
-function handleSelectionChange() {
+function handleSelectionChange(){
   const selectedOption = villeCharge.options[villeCharge.selectedIndex];
   console.log(selectedOption.value);
   latitude.value= selectedOption.getAttribute('data-lat')
   longitude.value= selectedOption.getAttribute('data-lng')
+
+
 }
 
-villeCharge.addEventListener('change', handleSelectionChange);
+villeCharge.addEventListener('input', handleSelectionChange);
 
 
 

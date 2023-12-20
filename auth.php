@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$_SESSION['r_s'] = $row["r_s"];
 
         echo "success";
+       
     } else {
         echo "failure";
     }

@@ -15,7 +15,6 @@
 
   <link rel="stylesheet" href="./src/css/CountryPickerSignUp/mobiscroll.jquery.min.css">
     <script src="./src/js/CountryPickerSignUp/mobiscroll.jquery.min.js"></script>
-  
     <?php include"header-new.php" ?>
 
     <style>

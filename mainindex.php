@@ -1,4 +1,6 @@
-<?php include"header.php" ?>
+<?php include"header.php";
+	include('./config.php');?>
+	
 <style>
 	.suivieform{
 		width:30%;
@@ -20,7 +22,7 @@
             <div class="row content-row">
                 
                 <div class="col-md-12">
-                    <div class="contact-map" style="backgroundColor:red">
+                    <div class="contact-map"">
 
 					<div class="row text-center" >
        
@@ -50,7 +52,7 @@ rgb(156, 191, 97); border-style: solid; border-width: 2px;" data-stylerecorder="
 						   </br></br>
 </br></br>
 					<?php
-						if(isset($_SESSION['type']) && $_SESSION['type'] == "client") {
+						if( $_SESSION['type'] == "admin") {
 					?>
 					<button onclick="window.location.href ='espace-client.php'" class="button" style="width:35%;height: 45px;">Envoyer un colis</button>
 					</br></br>

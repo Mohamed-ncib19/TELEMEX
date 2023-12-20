@@ -24,7 +24,7 @@
 	$result = curl_exec($ch); // This is the result from the API
 	curl_close($ch);
 	
-	echo $result;
+	var_dump($result);
 
 
 ?>
