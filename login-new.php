@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -53,27 +54,28 @@
 
 
     </style>
+  
 
-<div class="h-screen w-full flex flex-col justify-center items-center lg:mt-12 mt-4" >
+<div class="h-full w-full flex flex-col justify-center items-center lg:mt-12 mt-4" >
 
 
-<div id="Container"  class="flex flex-row justify-center items-center m-auto w-full h-screen " >
+<div id="Container"  class="flex flex-row justify-center items-center m-auto md:w-full  " >
   <div id="backgroundContainer" class="w-full bg-[#D9D9D9]/[.4] h-[80vh] lg:flex hidden transition-all duration-700">
     <img id="background" class="w-full  shadow-xl shadow-gray-400 transition-all duration-700" src="./newdesign/images/login-background.png" alt="Bienvenue">
   </div>
 
-  <div id="LoginSignUpContainer" class=" flex flex-col justify-center items-center w-[90vw] lg:h-full h-full lg:mt-0 lg:gap-6 gap-8  bg-[#D9D9D9]/[.5] shadow-lg shadow-gray-400 transition-all duration-700 " >
+  <div id="LoginSignUpContainer" class=" flex flex-col justify-center items-center w-[90vw] lg:h-full max-h-full lg:mt-0 lg:gap-6 gap-8  bg-[#D9D9D9]/[.5] shadow-lg shadow-gray-400 transition-all duration-700 " >
   <!--Login-->
-   <div id="login-container" class="flex flex-col gap-6" >  
-  <div class="flex justify-center items-center  text-[2rem] mt-20">
-      <span class="text-[#2B2E86]" >CONNECTEZ-</span>
-      <span class="text-[#E92C24]" >VOUS</span>
+   <div id="login-container" class="flex flex-col gap-6 p-3 "  >  
+  <div class="flex justify-center items-center md:text-[2rem] text-[2rem] transition-all duration-700 ">
+      <p class="text-[#2B2E86]" >CONNECTEZ-</p>
+      <p class="text-[#E92C24]" >VOUS</p>
     </div>
    
     <div id="login-container">
       
         <form id="myForm" method="post"  class="flex flex-col gap-6 justify-start items-start w-full " >
-          <div class=" ">
+          <div>
             <input class="  bg-gray-100  rounded-xl p-4 border-gray-300 lg:w-[30vw] w-[80vw]  focus:ring-1 focus:ring-purple-500 transition-all duration-600" name="login" type="text" placeholder="Adresse e-mail ou numéro de téléphone"  required>
           </div>
           <div class="  relative">
@@ -137,7 +139,7 @@
 
  
   <!--sign-up-->
-  <div class=" w-full h-full flex-col justify-center items-center gap-8 hidden transition-all duration-700 animate__animated animate__slideInRight" id="sign-up-container" >
+  <div class=" w-full h-full flex-col justify-center lg:mt-0 mt-[9rem] m-auto items-center gap-8 hidden transition-all duration-700 animate__animated animate__slideInRight" id="sign-up-container" >
    
       <div id="inscription" class="text-center text-[#2B2E86] text-[2rem]">
         <span>INSCRIPTION
@@ -222,7 +224,7 @@
 
         <div class=" w-full float-left flex justify-start items-center gap-1" >
         <div class="hover:bg-purple-300 p-4 rounded-full cursor-pointer transition-all duration-500" >
-                  <input  id="save-me" id="roundCheckbox" required type="checkbox" value="" class="w-4 h-4 p-2 cursor-pointer text-purple-600 bg-gray-100 border-gray-400 rounded focus:ring-purple-500 dark:focus:ring-[#E92C24] dark:ring-offset-gray-800 focus:ring-2  dark:border-gray-600 transition-all duration-400">
+                  <input  id="save-me-sign-up" id="roundCheckbox" required type="checkbox" value="" class="w-4 h-4 p-2 cursor-pointer text-purple-600 bg-gray-100 border-gray-400 rounded focus:ring-purple-500 dark:focus:ring-[#E92C24] dark:ring-offset-gray-800 focus:ring-2  dark:border-gray-600 transition-all duration-400">
                 </div>
                 <p> <span class="text-lg font-normal text-[#2B2E86]" > J'ai lu et j'accepte </span>  <span data-te-toggle="tooltip" title="lire les conditions générales" onclick="window.location.href = 'condition-new.php';" class="text-[#E92C24] cursor-pointer font-semibold" >conditions générales</span></p>
         </div>
@@ -300,11 +302,9 @@ const LoginSignUpContainer =document.querySelector('#LoginSignUpContainer');
 
 
 signUpButton.addEventListener('click',()=>{
-  signUpContainer.classList.remove('hidden');
+/*   signUpContainer.classList.add('mt-[8rem]')
+ */  signUpContainer.classList.remove('hidden');
   loginContainer.classList.add('hidden');
-  LoginSignUpContainer.classList.remove('h-full')
-  LoginSignUpContainer.classList.add('max-h-max')
-  LoginSignUpContainer.classList.add('mt-[13pc]')
   Container.classList.remove('flex-row');
   Container.classList.add('flex-row-reverse')
   backgroundContainerImage.classList.add('animate__animated');
@@ -314,16 +314,13 @@ signUpButton.addEventListener('click',()=>{
 });
 
 logInButtonFromSignUp.addEventListener('click', () => {
+  /* signUpContainer.classList.remove('mt-[8rem]') */
   loginContainer.classList.remove('hidden');
   signUpContainer.classList.add('hidden');
-  LoginSignUpContainer.classList.remove('max-h-max')
-  LoginSignUpContainer.classList.remove('mt-[13pc]')
-  LoginSignUpContainer.classList.add('h-full')
   loginContainer.classList.add('animate__animated');
   loginContainer.classList.add('animate__slideInLeft')
   Container.classList.remove('flex-row-reverse');
   Container.classList.add('flex-row')
-  signUpContainer.classList.add('hidden');
   backgroundContainerImage.classList.remove('animate__slideInLeft');
   backgroundContainerImage.classList.add('animate__slideInRight'); 
   backgroundImgContainer.src="./newdesign/images/login-background.png"
